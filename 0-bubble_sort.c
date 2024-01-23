@@ -9,14 +9,15 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	int temp, swapped = 0;
+	int temp, swapped;
 	size_t i, t, c, n;
 
-	if (size >= 2)
+	if (size >= 2 || array != NULL)
 	{
 		t = 0;
 		c = size;
 		n = size;
+		swapped = 0;
 		while (t < c)
 		{
 			for (i = 0; i < n - 1; i++)
@@ -26,7 +27,7 @@ void bubble_sort(int *array, size_t size)
 					array[i] = array[i + 1];
 					array[i + 1] = temp;
 					swapped = 1;
-					/* print array after each time swap */
+					/* print array after each swap */
 					print_array((const int *)array, size);
 				}
 			if (swapped == 0)
