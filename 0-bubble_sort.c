@@ -5,8 +5,10 @@
  * ascending order using the Bubble sort algorithm.
  * @array: array of integers to be sorted.
  * @size: number of elements in @array.
- */
-
+ *
+ * Description: print the array after each time two elements of the
+ * array are swapped.
+*/
 void bubble_sort(int *array, size_t size)
 {
 	int temp, swapped;
