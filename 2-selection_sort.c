@@ -13,27 +13,27 @@ void selection_sort(int *array, size_t size)
 	int min, tmp;
 	size_t i, j, min_idx;
 
-	if (size > 2 || array != NULL)
+	if (size < 2 || array == NULL)
+		return;
+
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < size; i++)
+		min = array[i];
+		min_idx = 0;
+		for (j = i; j < size; j++)
 		{
-			min = array[i];
-			min_idx = 0;
-			for (j = i; j < size; j++)
+			if (array[j] < min)
 			{
-				if (array[j] < min)
-				{
-					min = array[j];
-					min_idx = j;
-				}
+				min = array[j];
+				min_idx = j;
 			}
-			if (min < array[i])
-			{
-				tmp = array[i];
-				array[i] = min;
-				array[min_idx] = tmp;
-				print_array((const int *)array, size);
-			}
+		}
+		if (min < array[i])
+		{
+			tmp = array[i];
+			array[i] = min;
+			array[min_idx] = tmp;
+			print_array((const int *)array, size);
 		}
 	}
 }
