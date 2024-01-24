@@ -6,8 +6,7 @@
  * @array: array of integers to be sorted.
  * @size: the length of @array.
  *
- * Description: print the array after each time two elements of the
- * array are swapped.
+ * Description: print the array after each time two elements are swapped.
  */
 void selection_sort(int *array, size_t size)
 {
